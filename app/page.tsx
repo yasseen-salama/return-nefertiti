@@ -1,21 +1,18 @@
 
 "use client"
 
-import Image from 'next/image'
-import type { NextPage } from 'next';
 import dynamic from 'next/dynamic';
 import Head from 'next/head';
 import { AnimatePresence } from 'framer-motion';
-import GlobalStyle from '../app/styles/globalStyle'; // adjust the path based on your project structure
-import SyncLoader from "react-spinners/SyncLoader"; // Importing the spinner
+import GlobalStyle from '../app/styles/globalStyle'; 
+import SyncLoader from "react-spinners/SyncLoader"; 
 
 const Nefertiti = dynamic(() => import('../components/Nefertiti'), {
   ssr: false,
   loading: ({ isLoading, error }) => {
     if (isLoading) {
       return (
-        <div className="loader-container">
-          <SyncLoader color="#ff0000" size={10} />
+        <div>
         </div>
       );
     }

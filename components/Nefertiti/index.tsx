@@ -4,7 +4,8 @@ import React, { useCallback, useEffect, useRef, useState } from 'react';
 import * as THREE from 'three';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
 import { loadGLTFModel } from '../../lib/model';
-import { BodyModel, Container, Footer, Header } from './styles';
+import { BodyModel, Container, Footer, Header, LoaderContainer} from './styles';
+import SyncLoader from "react-spinners/SyncLoader"; 
 
 const Nefertiti: React.FC = () => {
   const refBody = useRef<HTMLDivElement>(null);
@@ -83,7 +84,6 @@ const Nefertiti: React.FC = () => {
            const distance = desiredSize * 2; // adjust multiplyer value 
            const direction = new THREE.Vector3(0, 0, 1).multiplyScalar(distance);
            camera.position.copy(direction);
-           
            animate();
            setLoading(false);
            console.log('GLTF model loaded:', obj); 
@@ -137,8 +137,15 @@ const Nefertiti: React.FC = () => {
           <span>return nefertiti  </span> 
         </h1>
       </Header>
-      <BodyModel ref={refBody}></BodyModel>
+      <div>
+        <BodyModel ref={refBody}></BodyModel>
+        {loading ? 
+        <LoaderContainer>
+          <SyncLoader color="#ff0000" size={10} />
+        </LoaderContainer> : null } 
+      </div>
       <Footer>
+      © 2023 Yasseen Salama. All rights reserved.
       </Footer>
     </Container>
   );

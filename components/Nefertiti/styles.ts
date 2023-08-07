@@ -34,20 +34,28 @@ const Header = styled.div`
 const BodyModel = styled.div`
   position: absolute;
   inset: 0;
-
-  height: 100%;
-  width: 100%;
-
   cursor: pointer;
   background-color: transparent;
 `;
-
+const LoaderContainer = styled.div`
+  position: absolute;
+  top: 0; left: 0; bottom: 0; right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;  // ensure it's on top
+`;
 const Footer = styled.div`
   position: absolute;
-  bottom: 5rem;
+  bottom: 1rem;
   z-index: 9;
-
+  font-size: 0.8rem;
   width: 100%;
+  font-family: 'BerlinType';
+  background: red;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  
 `;
 
-export { Container, Header, BodyModel, Footer };
+export { Container, Header, BodyModel, Footer, LoaderContainer};
