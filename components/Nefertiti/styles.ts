@@ -12,22 +12,20 @@ const Container = styled.div`
 
 const Header = styled.div`
   position: absolute;
-  top: 5rem;
-  left: 0;
-  z-index: 9;
-
-  width: 100%;
-  font-size: 4rem;
+  top: 1rem;
+  left: 1rem;
+  font-size: 1.3rem;
 
   @media (max-width: 480px) {
-    font-size: 2.5rem;
+    font-size: 1.3rem;
   }
 
   h1 {
     font-size: inherit;
   }
   span {
-    background: linear-gradient(orange, red);
+    font-family: 'BerlinType';
+    background: red;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
   }

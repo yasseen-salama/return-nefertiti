@@ -49,10 +49,11 @@ const Nefertiti: React.FC = () => {
       setRenderer(renderer);
 
       const scale = scH * 0.08 + 4;
-      const camera = new THREE.OrthographicCamera(-scale, scale, scale, -scale / 2, 0.01, 50000);
-      camera.position.copy(initialCameraPosition);
-      camera.lookAt(target);
-      setCamera(camera);
+     // Changing to PerspectiveCamera
+     const camera = new THREE.PerspectiveCamera(45, scW / scH, 0.01, 1000);
+     camera.position.set(0, 5, 10); // Set the camera a bit far from the origin
+     camera.lookAt(target);
+     setCamera(camera);
 
       const ambientLight = new THREE.AmbientLight(0xcccccc, 1);
       scene.add(ambientLight);
@@ -62,14 +63,30 @@ const Nefertiti: React.FC = () => {
       controls.target = target;
       setControls(controls);
 
-      loadGLTFModel(scene, '/little-witch/scene.gltf', {
-        receiveShadow: false,
-        castShadow: false,
+      loadGLTFModel(scene, '/nefertiti/scene.gltf', {
+        receiveShadow: true,
+        castShadow: true,
       })
         .then(obj => {
-          animate();
-          setLoading(false);
-          console.log('GLTF model loaded:', obj); 
+           // model's size and center
+           const box = new THREE.Box3().setFromObject(obj);
+           const size = box.getSize(new THREE.Vector3());
+           const center = box.getCenter(new THREE.Vector3());
+           
+           const desiredSize = 12; // adjust scale value 
+           const scaleFactor = desiredSize / Math.max(size.x, size.y, size.z);
+           obj.scale.set(scaleFactor, scaleFactor, scaleFactor);
+           
+           obj.position.set(-center.x * scaleFactor, -center.y * scaleFactor, -center.z * scaleFactor);
+
+           // ajdust camera's position
+           const distance = desiredSize * 2; // adjust multiplyer value 
+           const direction = new THREE.Vector3(0, 0, 1).multiplyScalar(distance);
+           camera.position.copy(direction);
+           
+           animate();
+           setLoading(false);
+           console.log('GLTF model loaded:', obj); 
         })
         .catch(error => {
           console.error('Error loading GLTF model:', error); 
@@ -117,7 +134,7 @@ const Nefertiti: React.FC = () => {
     <Container>
       <Header>
         <h1>
-          <span>Nefertiti</span> 
+          <span>return nefertiti  </span> 
         </h1>
       </Header>
       <BodyModel ref={refBody}>{loading && <p>loading...</p>}</BodyModel>
