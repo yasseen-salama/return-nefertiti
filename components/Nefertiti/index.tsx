@@ -137,7 +137,7 @@ const Nefertiti: React.FC = () => {
           <span>return nefertiti  </span> 
         </h1>
       </Header>
-      <BodyModel ref={refBody}>{loading && <p>loading...</p>}</BodyModel>
+      <BodyModel ref={refBody}></BodyModel>
       <Footer>
       </Footer>
     </Container>
