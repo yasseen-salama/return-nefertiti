@@ -7,12 +7,6 @@ const Container = styled.div`
   color: #fff;
   text-align: center;
   background-position: center;
-  @media screen and (max-width: 767px) {
-    min-height: -webkit-fill-available;
-    _::-webkit-full-page-media, _:future, :root .safari_only {
-      min-height: -webkit-fill-available;
-    }
-}
 `;
 
 const Header = styled.div`
@@ -60,6 +54,9 @@ const Footer = styled.div`
   background: red;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  @media screen and (max-width: 767px) {
+    padding-bottom: 20px;  
+  }
   
 `;
 
