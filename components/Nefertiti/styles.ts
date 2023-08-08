@@ -3,7 +3,7 @@ import styled from 'styled-components';
 const Container = styled.div`
   position: relative;
   width: 100vw;
-  min-height: -webkit-fill-available;
+  height: 100vh;
   color: #fff;
   text-align: center;
   background-position: center;
