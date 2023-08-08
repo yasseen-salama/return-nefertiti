@@ -3,12 +3,14 @@ import styled from 'styled-components';
 const Container = styled.div`
   position: relative;
   width: 100vw;
-  min-height: 100vh; /* fallback for other browsers */
-  min-height: -webkit-fill-available; /* fix for mobile Safari */
-
+  height: 100vh;
   color: #fff;
   text-align: center;
   background-position: center;
+  @media (max-width: 768px) {
+    min-height: 100vh; /* fallback for other browsers */
+    min-height: -webkit-fill-available; /* fix for mobile Safari */
+  }
 `;
 
 const Header = styled.div`
