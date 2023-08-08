@@ -3,10 +3,15 @@ import styled from 'styled-components';
 const Container = styled.div`
   position: relative;
   width: 100vw;
-  height: 100vh;
   color: #fff;
   text-align: center;
   background-position: center;
+  @media (max-width: 768px) {
+    min-height: -webkit-fill-available; /* fix for mobile Safari and similar viewport environments */
+  }
+  @media (min-width: 769px) {
+    height: 100vh;
+  }
 `;
 
 const Header = styled.div`
@@ -54,9 +59,6 @@ const Footer = styled.div`
   background: red;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  @media screen and (max-width: 767px) {
-    padding-bottom: 40px;  
-  }
   
 `;
 
