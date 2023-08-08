@@ -55,7 +55,7 @@ const Footer = styled.div`
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   @media screen and (max-width: 767px) {
-    padding-bottom: 90px;  
+    padding-bottom: 40px;  
   }
   
 `;
