@@ -3,17 +3,15 @@ import styled from 'styled-components';
 const Container = styled.div`
   position: relative;
   width: 100vw;
-  height: 100vh;
+  min-height: -webkit-fill-available;
   color: #fff;
   text-align: center;
   background-position: center;
-  @media (max-width: 768px) {
-    min-height: 100vh; /* fallback for other mobile browsers */
-  }
-  _::-webkit-full-page-media, _:future, :root .safari_only {
-    min-height: -webkit-fill-available;
-  
-  }
+  @media screen and (max-width: 767px) {
+    _::-webkit-full-page-media, _:future, :root .safari_only {
+      min-height: -webkit-fill-available;
+    }
+}
 `;
 
 const Header = styled.div`
