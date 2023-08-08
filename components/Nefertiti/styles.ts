@@ -8,6 +8,7 @@ const Container = styled.div`
   text-align: center;
   background-position: center;
   @media screen and (max-width: 767px) {
+    min-height: -webkit-fill-available;
     _::-webkit-full-page-media, _:future, :root .safari_only {
       min-height: -webkit-fill-available;
     }
