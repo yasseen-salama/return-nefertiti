@@ -4,7 +4,7 @@ import React, { useCallback, useEffect, useRef, useState } from 'react';
 import * as THREE from 'three';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
 import { loadGLTFModel } from '../../lib/model';
-import { BodyModel, Container, Footer, Header, LoaderContainer} from './styles';
+import { BodyModel, Container, LoaderContainer} from './styles';
 import SyncLoader from "react-spinners/SyncLoader"; 
 
 const Nefertiti: React.FC = () => {
@@ -132,11 +132,6 @@ const Nefertiti: React.FC = () => {
 
   return (
     <Container>
-      <Header>
-        <h1>
-          <span>return nefertiti  </span> 
-        </h1>
-      </Header>
       <div>
         <BodyModel ref={refBody}></BodyModel>
         {loading ? 
@@ -144,9 +139,6 @@ const Nefertiti: React.FC = () => {
           <SyncLoader color="#ff0000" size={10} />
         </LoaderContainer> : null } 
       </div>
-      <Footer>
-      © 2023 Yasseen Salama. All rights reserved.
-      </Footer>
     </Container>
   );
 };

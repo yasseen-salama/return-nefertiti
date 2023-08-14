@@ -4,8 +4,7 @@
 import dynamic from 'next/dynamic';
 import Head from 'next/head';
 import { AnimatePresence } from 'framer-motion';
-import GlobalStyle from '../app/styles/globalStyle'; 
-import SyncLoader from "react-spinners/SyncLoader"; 
+import {GlobalStyle} from '../app/styles/globalStyle'; 
 
 const Nefertiti = dynamic(() => import('../components/Nefertiti'), {
   ssr: false,
