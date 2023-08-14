@@ -14,27 +14,6 @@ const Container = styled.div`
   }
 `;
 
-const Header = styled.div`
-  position: absolute;
-  top: 1rem;
-  left: 1rem;
-  font-size: 1.3rem;
-
-  @media (max-width: 480px) {
-    font-size: 1.3rem;
-  }
-
-  h1 {
-    font-size: inherit;
-  }
-  span {
-    font-family: 'BerlinType';
-    background: red;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-  }
-`;
-
 const BodyModel = styled.div`
   position: absolute;
   inset: 0;
@@ -49,17 +28,5 @@ const LoaderContainer = styled.div`
   align-items: center;
   z-index: 1000;  // ensure it's on top
 `;
-const Footer = styled.div`
-  position: absolute;
-  bottom: 1rem;
-  z-index: 9;
-  font-size: 0.8rem;
-  width: 100%;
-  font-family: 'BerlinType';
-  background: red;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  
-`;
 
-export { Container, Header, BodyModel, Footer, LoaderContainer};
+export { Container, BodyModel, LoaderContainer};
