@@ -1,7 +1,6 @@
 "use client"
 import { createGlobalStyle, styled } from 'styled-components';
 
-
 const GlobalStyle = createGlobalStyle`
   @font-face {
     font-family: 'BerlinType';
@@ -9,21 +8,16 @@ const GlobalStyle = createGlobalStyle`
     font-weight: normal;
     font-style: normal;
   }
+  h1 {
+    font-family: 'BerlinType';
+    font-size: 1.2rem;
+    color: red;
+    padding: 25px 50px 75px 100px;
+  }
 `;
 
 const Header = styled.div`
-  position: absolute;
-  top: 1rem;
-  left: 1rem;
   font-size: 1.3rem;
-
-  @media (max-width: 480px) {
-    font-size: 1.3rem;
-  }
-
-  h1 {
-    font-size: inherit;
-  }
   span {
     font-family: 'BerlinType';
     background: red;

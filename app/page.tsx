@@ -1,9 +1,4 @@
-"use client"
-
 import dynamic from 'next/dynamic';
-import Head from 'next/head';
-import { AnimatePresence } from 'framer-motion';
-import {GlobalStyle} from '../app/styles/globalStyle'; 
 
 const Nefertiti = dynamic(() => import('../components/Nefertiti'), {
   ssr: false,
@@ -24,10 +19,6 @@ const Nefertiti = dynamic(() => import('../components/Nefertiti'), {
 export default function Home() {
   return (
     <div>
-      <GlobalStyle />
-      <Head>
-        <title>return nefertiti</title>
-      </Head>
       <Nefertiti />
     </div>
 

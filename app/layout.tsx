@@ -1,7 +1,7 @@
-import StyledComponentsRegistry from '../lib/registry'
-
 import './globals.css'
-import {Footer, Header} from './styles/globalStyle';
+import StyledComponentsRegistry from '../lib/registry'
+import {Footer, Header, GlobalStyle} from './styles/globalStyle';
+import Navigation from '../components/navigation';
 
 
 
@@ -13,17 +13,13 @@ export default function RootLayout({
   return (
     <html lang="en">
       <StyledComponentsRegistry>   
-      
       <body>
-      <Header>
-        <h1>
-          <span>return nefertiti</span> 
-        </h1>
-      </Header>
+      <GlobalStyle />
+      <Navigation />
+
       {children}
       <Footer>© 2023 Yasseen Salama. All rights reserved.</Footer>
       </body>
-
       </StyledComponentsRegistry>
     </html>
   )
