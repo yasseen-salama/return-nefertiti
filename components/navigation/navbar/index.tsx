@@ -10,7 +10,7 @@ const Navbar = ({ toggle }: { toggle: () => void }) => {
           <div className="flex justify-between items-center h-full">
           <Logo />
 
-            <ul className="ml-auto hidden md:flex gap-x-6 text-red-500 ">
+            <ul className="ml-auto hidden md:flex gap-x-6 text-red-500 text-base ">
               <li>
                 <Link href="/our-story">
                   <p><u>Our Story</u></p>

@@ -36,7 +36,7 @@ const Logo = () => {
   return (
     <>
       <Link href="/" style={{ display: showButton ? "none" : "block" }}>
-      <div className="text-red-500 font-custom1">
+      <div className="text-red-500 font-custom1 text-lg">
         <span>return nefertiti e.V.</span>
       </div>
       </Link>
