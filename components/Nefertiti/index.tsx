@@ -52,7 +52,7 @@ const Nefertiti: React.FC = () => {
       const scale = scH * 0.08 + 4;
      // Changing to PerspectiveCamera
      const camera = new THREE.PerspectiveCamera(45, scW / scH, 0.01, 1000);
-     camera.position.set(0, 5, 10); // Set the camera a bit far from the origin
+     camera.position.set(0, 7, 10); // Set the camera a bit far from the origin
      camera.lookAt(target);
      setCamera(camera);
 
@@ -74,11 +74,11 @@ const Nefertiti: React.FC = () => {
            const size = box.getSize(new THREE.Vector3());
            const center = box.getCenter(new THREE.Vector3());
            
-           const desiredSize = 12; // adjust scale value 
+           const desiredSize = 13; // adjust scale value 
            const scaleFactor = desiredSize / Math.max(size.x, size.y, size.z);
            obj.scale.set(scaleFactor, scaleFactor, scaleFactor);
            
-           obj.position.set(-center.x * scaleFactor, -center.y * scaleFactor, -center.z * scaleFactor);
+           obj.position.set(-center.x * scaleFactor , -center.y * scaleFactor + 1.2 , -center.z * scaleFactor);
 
            // ajdust camera's position
            const distance = desiredSize * 2; // adjust multiplyer value 
@@ -86,7 +86,6 @@ const Nefertiti: React.FC = () => {
            camera.position.copy(direction);
            animate();
            setLoading(false);
-           console.log('GLTF model loaded:', obj); 
         })
         .catch(error => {
           console.error('Error loading GLTF model:', error); 
@@ -103,7 +102,7 @@ const Nefertiti: React.FC = () => {
           const p = initialCameraPosition;
           const rotSpeed = -easeOutCirc(frame / 120) * Math.PI * 20;
 
-          camera.position.y = 10;
+          camera.position.y = 5;
           camera.position.x = p.x * Math.cos(rotSpeed) + p.z * Math.sin(rotSpeed);
           camera.position.z = p.z * Math.cos(rotSpeed) - p.x * Math.sin(rotSpeed);
           camera.lookAt(target);
@@ -132,13 +131,11 @@ const Nefertiti: React.FC = () => {
 
   return (
     <Container>
-      <div>
         <BodyModel ref={refBody}></BodyModel>
         {loading ? 
         <LoaderContainer>
           <SyncLoader color="#ff0000" size={10} />
         </LoaderContainer> : null } 
-      </div>
     </Container>
   );
 };

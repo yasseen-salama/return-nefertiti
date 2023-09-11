@@ -12,7 +12,7 @@ export default function RootLayout({
       <body>
       <div className="flex flex-col h-screen"> 
             <Navigation />
-            <main>{children}</main>
+            <main className="flex-grow overflow-hidden">{children}</main>
             <Footer/>
         </div>
       </body>

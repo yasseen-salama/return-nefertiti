@@ -1,15 +1,13 @@
 import styled from 'styled-components';
 
 const Container = styled.div`
-  position: relative;
-  width: 100vw;
-  color: #fff;
-  height: calc(100vh - 60px - 50px); /* 50px is the height of the footer */
+  display: flex;  // Set to flex
+  width: 100%;    // Take up full width of its parent
+  height: 100%;   // Take up full height of its parent
 `;
 
 const BodyModel = styled.div`
-  position: absolute;
-  inset: 0;
+  flex: 1;        // Take up available space
   cursor: pointer;
   background-color: transparent;
 `;
