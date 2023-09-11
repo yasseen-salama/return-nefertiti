@@ -1,9 +1,6 @@
 import './globals.css'
-import StyledComponentsRegistry from '../lib/registry'
-import {Footer, Header, GlobalStyle} from './styles/globalStyle';
 import Navigation from '../components/navigation';
-
-
+import Footer from '../components/footer';
 
 export default function RootLayout({
   children,
@@ -12,15 +9,13 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <StyledComponentsRegistry>   
       <body>
-      <GlobalStyle />
-      <Navigation />
-
-      {children}
-      <Footer>© 2023 Yasseen Salama. All rights reserved.</Footer>
+      <div className="flex flex-col h-screen"> 
+            <Navigation />
+            <main>{children}</main>
+            <Footer/>
+        </div>
       </body>
-      </StyledComponentsRegistry>
     </html>
   )
 }

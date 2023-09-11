@@ -2,7 +2,6 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import Button from "./button";
-import { Header } from '../../../app/styles/globalStyle';
 
 
 const Logo = () => {
@@ -37,11 +36,9 @@ const Logo = () => {
   return (
     <>
       <Link href="/" style={{ display: showButton ? "none" : "block" }}>
-      <Header>
-
-      <span>return nefertiti e.V.</span>
-      </Header>
-
+      <div className="text-red-500 font-custom1">
+        <span>return nefertiti e.V.</span>
+      </div>
       </Link>
       <div
         style={{

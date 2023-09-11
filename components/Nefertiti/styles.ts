@@ -4,14 +4,7 @@ const Container = styled.div`
   position: relative;
   width: 100vw;
   color: #fff;
-  text-align: center;
-  background-position: center;
-  @media (max-width: 768px) {
-    min-height: -webkit-fill-available; /* fix for mobile Safari and similar viewport environments */
-  }
-  @media (min-width: 769px) {
-    height: 100vh;
-  }
+  height: calc(100vh - 60px - 50px); /* 50px is the height of the footer */
 `;
 
 const BodyModel = styled.div`
