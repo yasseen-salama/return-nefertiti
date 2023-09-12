@@ -1,5 +1,5 @@
 export default function OurStory() {
-    return <div className="w-full h-20 bg-transparent sticky top-0">
+    return <div className="w-full h-20 bg-transparent sticky top-0 text-red-500">
         <div className="container mx-auto px-4 h-full">
           <h1 className="border-b-2 border-red-400 m-5 text-lg font-custom1">
             💗 our story 
