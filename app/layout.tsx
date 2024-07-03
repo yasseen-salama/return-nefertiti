@@ -1,12 +1,6 @@
 import './globals.css'
-import { Inter } from 'next/font/google'
-
-const inter = Inter({ subsets: ['latin'] })
-
-export const metadata = {
-  title: 'Return Nefertiti',
-  description: 'Nefertiti 3D Model',
-}
+import Navigation from '../components/navigation';
+import Footer from '../components/footer';
 
 export default function RootLayout({
   children,
@@ -15,7 +9,13 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body>
+      <div className="flex flex-col h-screen w-screen"> 
+            <Navigation />
+            <main className="flex-grow sm:overflow-hidden overflow-x-hidden overflow-y-scroll">{children}</main>
+            <Footer/>
+        </div>
+      </body>
     </html>
   )
 }

@@ -1,43 +1,13 @@
 import styled from 'styled-components';
 
 const Container = styled.div`
-  position: relative;
-  width: 100vw;
-  color: #fff;
-  text-align: center;
-  background-position: center;
-  @media (max-width: 768px) {
-    min-height: -webkit-fill-available; /* fix for mobile Safari and similar viewport environments */
-  }
-  @media (min-width: 769px) {
-    height: 100vh;
-  }
-`;
-
-const Header = styled.div`
-  position: absolute;
-  top: 1rem;
-  left: 1rem;
-  font-size: 1.3rem;
-
-  @media (max-width: 480px) {
-    font-size: 1.3rem;
-  }
-
-  h1 {
-    font-size: inherit;
-  }
-  span {
-    font-family: 'BerlinType';
-    background: red;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-  }
+  display: flex;  // Set to flex
+  width: 100%;    // Take up full width of its parent
+  height: 100%;   // Take up full height of its parent
 `;
 
 const BodyModel = styled.div`
-  position: absolute;
-  inset: 0;
+  flex: 1;        // Take up available space
   cursor: pointer;
   background-color: transparent;
 `;
@@ -49,17 +19,5 @@ const LoaderContainer = styled.div`
   align-items: center;
   z-index: 1000;  // ensure it's on top
 `;
-const Footer = styled.div`
-  position: absolute;
-  bottom: 1rem;
-  z-index: 9;
-  font-size: 0.8rem;
-  width: 100%;
-  font-family: 'BerlinType';
-  background: red;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  
-`;
 
-export { Container, Header, BodyModel, Footer, LoaderContainer};
+export { Container, BodyModel, LoaderContainer};
