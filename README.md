@@ -1,7 +1,6 @@
 ## Return Nefertiti
 
 Next.js App to display bust of Nefertiti with the 3D library Three.js. 
-Bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
 
